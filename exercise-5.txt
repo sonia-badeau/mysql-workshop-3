@@ -1,0 +1,24 @@
+Exercise 5
+
+List all of the emails associated to AddressBook.id = 100
+
+select * from ElectronicMail inner join AddressBook where addressBookId=100;
+
+-- en limitant à 10 résultats :
+
+mysql> select * from ElectronicMail inner join AddressBook where addressBookId=100 limit 10;
++---------+---------+------+-------------------------------------------+---------------+-----------+----------------+---------------------+---------------------+
+| emailId | entryId | type | content                                   | addressBookId | accountId | name           | createdOn           | modifiedOn          |
++---------+---------+------+-------------------------------------------+---------------+-----------+----------------+---------------------+---------------------+
+|       1 |    5465 | home | lorem.fringilla.ornare@dictumplacerat.com |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       2 |    4453 | home | diam.Duis@magnaetipsum.org                |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       3 |    4949 | home | sit.amet@loremutaliquam.com               |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       4 |    5942 | home | massa@semperdui.com                       |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       5 |    4973 | home | Cum.sociis@risusNuncac.ca                 |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       6 |    4966 | home | augue@rutrum.net                          |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       7 |    5331 | home | sit@commodohendrerit.co.uk                |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       8 |    5736 | home | neque.et@cursus.co.uk                     |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|       9 |    5116 | home | ornare.facilisis@arcu.com                 |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
+|      10 |    4454 | home | parturient.montes@ornare.com              |           100 |        69 | Sem Industries | 2016-03-10 23:49:35 | 2014-09-29 12:57:43 |
++---------+---------+------+-------------------------------------------+---------------+-----------+----------------+---------------------+---------------------+
+10 rows in set (0.00 sec)
