@@ -1,0 +1,38 @@
+Exercise 6
+
+List all of the phone numbers for Jenkins, Charlotte
+
+mysql> select * from Phone inner join Entry on lastName='Jenkins' and firstName='Charlotte' limit 10;
++---------+---------+------+----------+----------------+---------+---------------+-----------+----------+---------------------+-------+
+| phoneId | entryId | type | subtype  | content        | entryId | addressBookId | firstName | lastName | birthday            | type  |
++---------+---------+------+----------+----------------+---------+---------------+-----------+----------+---------------------+-------+
+|       1 |    1726 | home | landline | (726) 732-1076 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       2 |    1102 | home | landline | (646) 640-1430 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       3 |    1552 | home | landline | (111) 396-3055 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       4 |    1267 | home | landline | (605) 230-7173 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       5 |     350 | home | landline | (397) 966-5700 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       6 |    1608 | home | landline | (594) 756-8455 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       7 |    1351 | home | landline | (487) 897-3861 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       8 |    1545 | home | landline | (282) 869-7478 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|       9 |     760 | home | landline | (255) 647-1196 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|      10 |     778 | home | landline | (169) 195-3964 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
++---------+---------+------+----------+----------------+---------+---------------+-----------+----------+---------------------+-------+
+10 rows in set (0.00 sec)
+
+mysql> select * from Phone inner join Entry on lastName='Jenkins' and firstName='Charlotte' group by content limit 10;                                         
++---------+---------+-------+----------+----------------+---------+---------------+-----------+----------+---------------------+-------+
+| phoneId | entryId | type  | subtype  | content        | entryId | addressBookId | firstName | lastName | birthday            | type  |
++---------+---------+-------+----------+----------------+---------+---------------+-----------+----------+---------------------+-------+
+|    1709 |     541 | home  | landline | (100) 241-9773 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|    1982 |    1394 | other | fax      | (100) 854-2778 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|    1563 |    1147 | home  | landline | (101) 151-4811 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|    1416 |    1836 | work  | cellular | (101) 451-0865 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|    1036 |    1778 | home  | landline | (102) 101-1375 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|    1925 |    1325 | other | fax      | (102) 652-9086 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|     553 |     292 | other | fax      | (102) 681-6401 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|     348 |     106 | work  | cellular | (103) 103-7230 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|     657 |    1009 | other | fax      | (103) 106-3693 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
+|     416 |    1944 | work  | cellular | (104) 905-8707 |    1057 |            88 | Charlotte | Jenkins  | 1974-05-29 02:23:14 | phone |
++---------+---------+-------+----------+----------------+---------+---------------+-----------+----------+---------------------+-------+
+10 rows in set (0.00 sec)
+
