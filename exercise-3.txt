@@ -1,0 +1,46 @@
+Exercise 3
+
+List all of the countries with respective occurence totals in DESC order
+Country names should all appear lowercase
+
+mysql> select lower(country) from Address order by lower(country) desc;
+
+mysql> select lower(country) from Address order by lower(country) desc limit 30;
++----------------+
+| lower(country) |
++----------------+
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| åland islands  |
+| zimbabwe       |
+| zimbabwe       |
+| zimbabwe       |
+| zimbabwe       |
+| zimbabwe       |
+| zimbabwe       |
+| zimbabwe       |
+| zimbabwe       |
++----------------+
+
+
+//Problème avec les caractères spéciaux comme dans le pays "åland islands".
+//Il apparait donc en premier dans la liste alors qu'il devrait se trouver à la fin.
