@@ -22,7 +22,7 @@ Database changed
 
 -----
 //ACCOUNT
-mysql> create table Account (`accountId.` int primary key auto_increment, `email`  varchar(255), `password` varchar(40), `createdOn` datetime, `modifiedOn` datetime);
+mysql> create table Account (`accountId` int primary key auto_increment, `email`  varchar(255), `password` varchar(40), `createdOn` datetime, `modifiedOn` datetime);
 Query OK, 0 rows affected (0.01 sec)
 
 +------------+--------------+------+-----+---------+----------------+
@@ -66,7 +66,7 @@ Query OK, 0 rows affected (0.02 sec)
 6 rows in set (0.00 sec)
 
 //ADDRESS
-mysql> create table Address (`address.Id` int primary key auto_increment, `entryId` int, type enum('home', 'work', 'other'), `addressLine1` varchar(255), `addressLine2` varchar(255), `city` varchar(255), `province` varchar(128), `country` varchar(128), `postalCode` varchar(10));
+mysql> create table Address (`addressId` int primary key auto_increment, `entryId` int, type enum('home', 'work', 'other'), `addressLine1` varchar(255), `addressLine2` varchar(255), `city` varchar(255), `province` varchar(128), `country` varchar(128), `postalCode` varchar(10));
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> describe Address;
@@ -87,7 +87,7 @@ mysql> describe Address;
 
 
 //EMAIL
-mysql> create table Email (`email.Id` int primary key auto_increment, `entryId` int, type enum('home', 'work', 'other'), `content` varchar(255));
+mysql> create table Email (`emailId` int primary key auto_increment, `entryId` int, type enum('home', 'work', 'other'), `content` varchar(255));
 Query OK, 0 rows affected (0.01 sec)
 
 +----------+-----------------------------+------+-----+---------+----------------+
@@ -101,7 +101,7 @@ Query OK, 0 rows affected (0.01 sec)
 4 rows in set (0.00 sec)
 
 //PHONE
-mysql> create table Phone (`phone.Id` int primary key auto_increment, `entryId` int, type enum('home', 'work', 'other'), subtype enum('landline', 'cellular', 'fax'), `content` varchar(255));
+mysql> create table Phone (`phoneId` int primary key auto_increment, `entryId` int, type enum('home', 'work', 'other'), subtype enum('landline', 'cellular', 'fax'), `content` varchar(255));
 Query OK, 0 rows affected (0.02 sec)
 
 +----------+-----------------------------------+------+-----+---------+----------------+
